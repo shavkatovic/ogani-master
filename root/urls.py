@@ -6,6 +6,7 @@ from root import settings
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path('', include('apps.urls')),
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+                  path('users', include('users.urls')),
+                  path('', include('product.urls'))
+              ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS) \
               + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
